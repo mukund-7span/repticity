@@ -1,0 +1,199 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/primeview"
+    tools:context=".MainActivity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:id="@+id/primelayout"
+        android:orientation="vertical">
+
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_top"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:minHeight="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="4dp"
+            app:theme="?attr/actionBarTheme" >
+
+            <ImageView
+                android:id="@+id/replogo"
+                android:contentDescription="@string/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_gravity="left"/>
+
+            <Button
+                android:id="@+id/gettempe"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:layout_gravity="right"
+                android:onClick="onClick"
+                android:visibility="invisible"
+                android:text="Scan Temperature" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/image"
+                android:scaleType="fitStart"
+                app:riv_corner_radius="30dip"
+                app:riv_border_width="2dip"
+                app:riv_border_color="#333333"
+                app:riv_mutate_background="true"
+                app:riv_oval="true"
+                android:layout_gravity="end"
+                android:layout_width="60dp"
+                android:layout_height="50dp"/>
+
+            <TextView
+                android:id="@+id/tip"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="end"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/red"
+                android:textSize="20sp"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <WebView
+            android:id="@+id/webapp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <EditText
+                android:id="@+id/et_distance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:inputType="numberDecimal"
+                android:text="50" />
+
+            <EditText
+                android:id="@+id/uidfield"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:inputType="text"
+                android:visibility="invisible"
+                android:text="50" />
+
+            <EditText
+                android:id="@+id/passtemp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:inputType="text"
+                android:visibility="invisible"
+                android:text="50" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Distance:"
+                android:textSize="24.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <Button
+                android:id="@+id/popbtn"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:onClick="popClick"
+                android:visibility="invisible"
+                android:text="Login" />
+
+            <Button
+                android:id="@+id/gettempe2"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:onClick="onClick"
+                android:text="Get temperature" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/check"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:onClick="onClick"
+                android:text="calibration" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="12dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tip2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginRight="12dp"
+            android:gravity="center"
+            android:textColor="@color/red"
+            android:textSize="25sp"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView android:id="@+id/template_view"
+            android:layout_width="220dp"
+            android:layout_height="300dp"
+            android:gravity="center_horizontal"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:text="Pls keep your face in this box to take your temperature!"
+            android:textSize="15sp"
+            android:textColor="@color/purple"
+            android:padding="1dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/tv_shape"/>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
